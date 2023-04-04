@@ -1,0 +1,12 @@
+.Main{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: 2px solid red;
+    width: 400px;
+    height: 400px;
+    margin: 7px;
+    padding: 8px;
+    gap: 2rem;
+    align-items: center;
+}

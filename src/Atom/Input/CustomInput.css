@@ -1,0 +1,7 @@
+.input {
+  width: 8rem;
+  height: 2rem;
+  display: flex;
+  border-radius: 3px;
+  /* border: none; */
+}
