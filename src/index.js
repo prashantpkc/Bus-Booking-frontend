@@ -6,14 +6,15 @@ import App from './App';
 
 import Login from './pages/Login/Login';
 import Signup from './pages/Signup/Signup';
+// import Homepage from './pages/Homepage/Homepage';
 
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-
   <Routes>
+    {/* <Route path='/home' element = {<Homepage/>}/> */}
     <Route path='/login' element={<Login/>}/>
 
     <Route path='/Register' element={<Signup/>}/>
