@@ -3,7 +3,7 @@ export function isValidEmail(email) {
     return re.test(String(email));
 }
 
-export const isValidpassword = (value) => { return (/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15}$/.test(value)); }
+export const isValidPassword = (value) => { return (/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15}$/.test(value)); }
 
 export const isValidName = (value) => { return (/^[a-z/\s/A-Z|.|,]+$/).test(value)}
 
