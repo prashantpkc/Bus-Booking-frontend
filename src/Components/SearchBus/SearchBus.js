@@ -1,19 +1,3 @@
-// import React from 'react'
-// import CustomButton from '../../Atom/Button/CustomButton';
-// import CustomInput from '../../Atom/Input/CustomInput';
-// import "./SearchBus.css"
-// function SearchBus() {
-//   return (
-//     <div className="Search">
-//       <CustomInput/>
-//       <CustomInput/>
-//       <CustomInput type="date"/>
-//       <CustomButton text="Search Bus"/>
-//     </div>
-//   )
-// } 
-
-// export default SearchBus
 
 import React, { useState } from 'react';
 import CustomButton from '../../Atom/Button/CustomButton';
@@ -26,23 +10,12 @@ function SearchBus() {
   const [date, setDate] = useState("");
   const [results, setResults] = useState([]);
 
-  // const handleInputChange = (event) => {
-  //   const { name, value } = event.target;
-  //   if (name == "origin") {
-  //     setOrigin(value);
-  //   } else if (name == "destination") {
-  //     setDestination(value);
-  //   } else if (name == "date") {
-  //     setDate(value);
-  //   }
-  // }
+
 console.log(origin)
 console.log(destination)
 console.log(date)
   const handleSearch = async () => {
     const response = await fetch(`http://localhost:5000/getBus?startCity=${origin}&destination=${destination}&availableDates=${date}`);
-    // localhost:5000/getBus?startCity=kolkata&destination=mumbai&availableDates=10-04-2023
-
     const data = await response.json();
     setResults(data);
   }
