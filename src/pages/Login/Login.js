@@ -10,22 +10,9 @@ function Login() {
    const [user,setUser] = useState([])
    const [newUser,setNewUser] = useState([])
 
-    // useEffect(()=>{
-    //   // fetch("http://localhost:5000/getUser")
-    // .then(res=>res.json())
-    // .then(data=>setNewUser(data.data))
-    // },[])
-    // console.log(newUser.data)
 
    let handleSubmit = async(e)=>{
-      // let loginUser = newUser.filter((x)=>
-      // x.email === email && x.password === password)
-      // console.log(loginUser)
-      // if(loginUser.length > 0){
-      //   alert('login Sucessful...!😂')
-      // }else{
-      //   alert('Wrong Details, 🙁')
-      // }
+      
       e.preventDefault()
       let data = {
         email: email,
@@ -38,6 +25,8 @@ function Login() {
 
   return (
     <div className='login__form'>
+      <h1>login Page</h1>
+      
       <CustomInput value={email} placeholder='Email' onChange={(e)=> setEmail(e.target.value)}/>
       <CustomInput value={password} placeholder='Paswword' onChange={(e)=> setPassword(e.target.value)}/>
       <CustomButton onClick={handleSubmit} text='submit'/>
