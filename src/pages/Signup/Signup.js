@@ -201,12 +201,13 @@ const Signup = () => {
           <option value="other">Other</option>
         </select>
 
-        {<CustomInput
+        <CustomInput
           type="date"
           // id="dob"
           value={dob}
           onChange={(e) => setDob(e.target.value)}
-        />}
+          placeholder='Date'
+        />
 
         <CustomButton type="submit" text="Register" />
         <Link to="/login"><h6>Already Register ? Login</h6></Link>
