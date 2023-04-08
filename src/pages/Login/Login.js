@@ -3,6 +3,7 @@ import CustomInput from '../../Atom/Input/CustomInput'
 import CustomButton from '../../Atom/Button/CustomButton'
 import './Login.css'
 import axios from 'axios'
+import { Button } from "@mui/material";
 
 function Login() {
    const [email, setEmail]=useState('')
@@ -29,7 +30,12 @@ function Login() {
       
       <CustomInput value={email} placeholder='Email' onChange={(e)=> setEmail(e.target.value)}/>
       <CustomInput value={password} placeholder='Paswword' onChange={(e)=> setPassword(e.target.value)}/>
-      <CustomButton onClick={handleSubmit} text='submit'/>
+      {/* <CustomButton onClick={handleSubmit} text='submit'/> */}
+
+      <Button variant='contained' type='submit' onClick={handleSubmit} style={{ width: '100%' }} className='bg-danger mt-3'>
+        Submit
+      </Button>
+      
     </div>
   )
 }

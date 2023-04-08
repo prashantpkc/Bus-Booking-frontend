@@ -4,6 +4,7 @@ import { useNavigate, Link } from "react-router-dom";
 import Toast from "react-bootstrap/Toast";
 import CustomInput from "../../Atom/Input/CustomInput";
 import CustomButton from "../../Atom/Button/CustomButton";
+import { Button } from "@mui/material";
 import {
   isValidEmail,
   isValidPassword,
@@ -96,7 +97,7 @@ const Signup = () => {
 
   return (
     <div className="Main">
-      <h1>Sign Up Page</h1>
+      <h1>Sign Up</h1>
 
       <form onSubmit={HandleSubmit}>
         <CustomInput
@@ -191,7 +192,7 @@ const Signup = () => {
         )}
 
         <select
-          className="gender"
+          className="gender form-control"
           value={gender}
           onChange={(e) => setGender(e.target.value)}
         >
@@ -208,9 +209,9 @@ const Signup = () => {
           onChange={(e) => setDob(e.target.value)}
           placeholder='Date'
         />
-
-        <CustomButton type="submit" text="Register" />
-        <Link to="/login"><h6>Already Register ? Login</h6></Link>
+<Button variant="contained" type="submit" style={{width:'100%'}} className="bg-danger mt-3" >Register</Button>
+        {/* <CustomButton type="submit" text="Register" className="btn btn-danger" /> */}
+        <Link to="/login" ><h6 className="mt-3">Already Register ? Login</h6></Link>
       </form>
       {toast ? <Toast>
         <Toast.Header>

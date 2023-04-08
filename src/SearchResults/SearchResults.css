@@ -1,26 +1,30 @@
-.results-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    /* background: black; */
-  }
-  
-  .result-item {
-    width: 200px;
-    height: 200px;
-    background-color: #f1f1f1;
-    margin: 10px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .company, .type, .number, .start, .destination, .price {
+
+   .block {
+    border: 1px solid;
+    height: 150px;
     margin: 5px;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
+    padding: 5px;
   }
+
+  /* .table-container {
+    margin: 1em;
+    overflow-x: auto;
+  }
+  
+  .table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .table th,
+  .table td {
+    border: 1px solid #ddd;
+    padding: 0.5em;
+    text-align: left;
+  }
+  
+  .table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  } */
   
