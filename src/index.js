@@ -5,16 +5,18 @@ import Signup from './pages/Signup/Signup';
 import HomePage from './pages/HomePage/HomePage';
 import Header from './Components/Header/Header';
 import SearchResults from './SearchResults/SearchResults';
+import Payment from "./pages/Payment/Payment"
 import {RecoilRoot} from "recoil"
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import { BookTicket } from './BookTicket/BookTicket';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <RecoilRoot>
-  <BrowserRouter>
-  
+  <BrowserRouter> 
   <Header/>
   <Routes>
     <Route path='/' element = {<HomePage/>}/>
@@ -22,6 +24,7 @@ root.render(
     <Route path='/Register' element={<Signup/>}/>
     <Route path="/ticket"  element={<SearchResults/>}/>
     <Route path="/bookticket" element={<BookTicket />} />
+    <Route path="/payment" element={<Payment/>}/> 
   </Routes>
  
   </BrowserRouter>

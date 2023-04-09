@@ -5,13 +5,15 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-
+import {LoginAtom} from "../../RecoilAtom/Atoms"
+import {useRecoilState} from "recoil"
 function Header() {
-  const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("token")); // set initial value of isLoggedIn based on token
+  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("token")); // set initial value of isLoggedIn based on token
   const tonav = useNavigate();
-
+  const [loggedIn,setLoggedIn]=useRecoilState(LoginAtom)
   const handleLogout = () => {
     setIsLoggedIn(false);
+    setLoggedIn(false)
     localStorage.removeItem("token");
   };
 
@@ -37,12 +39,12 @@ function Header() {
             <Nav.Link href="#pricing">Pricing</Nav.Link>
           </Nav>
           <Nav className="ms-auto">
-            {isLoggedIn && (
+            {loggedIn && (
               <Nav.Link onClick={handleLogout} className="fw-bold">
                 Logout
               </Nav.Link>
             )}
-            {!isLoggedIn && (
+            {!loggedIn && (
               <NavDropdown
                 title={
                   <img

@@ -37,10 +37,6 @@ const Signup = () => {
 
   const [gender, setGender] = useState("");
   const [dob, setDob] = useState("");
-
-  const [genderMessage, setGenderMessage] = useState("");
-  const [dobMessage, setDobMessage] = useState("");
-
   const navigate = useNavigate();
 
   const HandleSubmit = (e) => {
