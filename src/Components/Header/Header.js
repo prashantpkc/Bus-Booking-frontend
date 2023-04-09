@@ -1,10 +1,20 @@
+import { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+
 function Header() {
+  const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("token")); // set initial value of isLoggedIn based on token
   const tonav = useNavigate();
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    localStorage.removeItem("token");
+  };
+
   return (
     <Navbar
       collapseOnSelect
@@ -26,25 +36,44 @@ function Header() {
             <Nav.Link href="#features">Features</Nav.Link>
             <Nav.Link href="#pricing">Pricing</Nav.Link>
           </Nav>
-          <Nav>
-            <Nav.Link href="#deets">More deets</Nav.Link>
-            <NavDropdown
-              title={
-                <img
-                  src="https://pixlok.com/wp-content/uploads/2022/02/Profile-Icon-SVG-09856789.png"
-                  height="30"
-                />
-              }
-              id="collasible-nav-dropdown"
-            >
-              <NavDropdown.Item href="#action/3.1" onClick={()=>{tonav("/Register")}}>Sign Up</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2" onClick={()=>{tonav("/login")}}>Sign in</NavDropdown.Item>
-            </NavDropdown>
+          <Nav className="ms-auto">
+            {isLoggedIn && (
+              <Nav.Link onClick={handleLogout} className="fw-bold">
+                Logout
+              </Nav.Link>
+            )}
+            {!isLoggedIn && (
+              <NavDropdown
+                title={
+                  <img
+                    src="https://pixlok.com/wp-content/uploads/2022/02/Profile-Icon-SVG-09856789.png"
+                    height="30"
+                  />
+                }
+                id="collasible-nav-dropdown"
+              >
+                <NavDropdown.Item
+                  href="#action/3.1"
+                  onClick={() => {
+                    tonav("/Register");
+                  }}
+                >
+                  Sign Up
+                </NavDropdown.Item>
+                <NavDropdown.Item
+                  href="#action/3.2"
+                  onClick={() => {
+                    tonav("/login");
+                  }}
+                >
+                  Sign in
+                </NavDropdown.Item>
+              </NavDropdown>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
   );
 }
-
 export default Header;

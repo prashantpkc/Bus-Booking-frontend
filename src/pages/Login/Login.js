@@ -12,17 +12,20 @@ function Login() {
    const [newUser,setNewUser] = useState([])
 
 
-   let handleSubmit = async(e)=>{
-      
-      e.preventDefault()
-      let data = {
-        email: email,
-        password: password
-      }
-      await axios.post("http://localhost:5000/login", data).then((data)=>{
-        console.log(data)
-      })
-   }
+
+let handleSubmit = async(e)=>{
+  e.preventDefault()
+  let data = {
+    email: email,
+    password: password
+  }
+  await axios.post("http://localhost:5000/login", data).then((response)=>{
+    console.log(response.data); // check the response data
+    localStorage.setItem('token', response.data.token); // set the token
+  })
+}
+
+
 
   return (
     <div className='login__form'>
@@ -41,4 +44,6 @@ function Login() {
 }
 
 export default Login
+
+
 

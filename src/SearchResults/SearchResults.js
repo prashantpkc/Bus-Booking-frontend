@@ -1,8 +1,8 @@
-
 import { BusAtom } from "../RecoilAtom/Atoms";
 import { useRecoilValue } from "recoil";
 import "./SearchResults.css"
 import { Button } from "@mui/material"
+import { Link } from "react-router-dom";
 import axios from 'axios'
 
 function SearchResults() {
@@ -36,7 +36,7 @@ function SearchResults() {
               <td>{item.pricePerSeat}</td>
               <td>
               
-                   <Button variant="contained" type="button" style={{height:'100%'}} className="bg-danger" >Book Ticket</Button>
+                   <Button variant="contained" type="button" style={{height:'100%'}} className="bg-danger" ><Link to="/bookticket">Book ticket</Link></Button>
               </td>
             </tr>
           ))}
@@ -47,7 +47,3 @@ function SearchResults() {
 }
 
 export default SearchResults;
-
-
-
-
