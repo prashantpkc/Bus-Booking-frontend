@@ -1,24 +1,28 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { LoginAtom } from "../RecoilAtom/Atoms";
-import {useRecoilValue} from "recoil"
 import './BookTicket.css'
+import { Button } from "@mui/material";
+
 export function BookTicket() {
-  const tonav=useNavigate()
+  const tonav = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
- const loggedIn=useRecoilValue(LoginAtom)
+
   useEffect(() => {
-    // check if user is logged in here and set isLoggedIn accordingly
-    // you can use localStorage, cookies, or a backend API to check if the user is logged in
+    console.log("first")
     const loggedIn = localStorage.getItem('isLoggedIn');
+    console.log(loggedIn)
     setIsLoggedIn(loggedIn ? true : false);
   }, []);
 
   function handleSubmit(event) {
-    if (!loggedIn) {
-      tonav("/login")
-      return
+    event.preventDefault();
+    console.log("ggg")
+
+    if (!isLoggedIn) {
+      console.log("ggg")
+      tonav("/login");
+      return;
     }
     const formData = new FormData(event.target);
     axios({
@@ -36,21 +40,19 @@ export function BookTicket() {
     })
       .then(() => {
         console.log("Passenger created successfully");
-       tonav("/payment")
+        tonav("/payment");
       })
       .catch((e) => {
         console.log(e.message);
       });
-
-
-    
   }
+  
 
   return (
-    <div className="container-fluid">
-      <h1>Book Ticket</h1>
+    <div class="container-fluid">
+       {/* <h1>Passenger Details</h1> */}
       <form onSubmit={handleSubmit}>
-        <h3>Passenger Details</h3>
+       
         <dl>
           <dt>Name</dt>
           <dd>
@@ -70,7 +72,7 @@ export function BookTicket() {
           </dd>
           <dt>Gender</dt>
           <dd>
-            <select name="gender">
+            <select name="gender" >
               <option value="male">Male</option>
               <option value="female">Female</option>
               <option value="others">Others</option>
@@ -88,9 +90,15 @@ export function BookTicket() {
             <input type="number" name="phone" />
           </dd>
         </dl>
-        <button type="submit">Proceed To Pay</button>
+        <Button
+          variant="contained"
+          type="submit"
+          style={{ width: "53%" }}
+          className="bg-danger mt-3"
+        >
+          Proceed To Pay
+        </Button>
       </form>
     </div>
   );
 }
-

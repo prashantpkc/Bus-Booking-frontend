@@ -3,7 +3,7 @@ import { useRecoilValue } from "recoil";
 import "./SearchResults.css"
 import { Button } from "@mui/material"
 import { Link } from "react-router-dom";
-import axios from 'axios'
+
 
 function SearchResults() {
   const DataValue = useRecoilValue(BusAtom);
@@ -17,9 +17,12 @@ function SearchResults() {
             <th>Company name</th>
             <th>Bus Number</th>
             <th>Type</th>
-            <th>Origin</th>
-            <th>Destination</th>
+            {/* <th>Origin</th>
+            <th>Destination</th> */}
             <th>Available Seats</th>
+            
+            <th>Departure Time</th>
+            <th>Arrival Time</th>
             <th>Fare</th>
             <th>Action</th>
           </tr>
@@ -30,9 +33,12 @@ function SearchResults() {
               <td>{item.companyName}</td>
               <td>{item.busNumber}</td>
               <td>{item.busType}</td>
-              <td>{item.startCity}</td>
-              <td>{item.destination}</td>
+              {/* <td>{item.startCity}</td>
+              <td>{item.destination}</td> */}
               <td>{item.availableSeats}</td>
+            
+              <td>{item.departureTime}</td>
+              <td>{item.arrivalTime}</td>
               <td>{item.pricePerSeat}</td>
               <td>
               
