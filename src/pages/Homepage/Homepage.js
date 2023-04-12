@@ -1,7 +1,7 @@
 import React from 'react';
 import SearchBus from '../../Components/SearchBus/SearchBus';
 
-import "./HomePage.css"
+import "./Homepage.css"
 
 const HomePage = () => {
   return (

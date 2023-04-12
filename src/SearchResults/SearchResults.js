@@ -42,7 +42,7 @@ function SearchResults() {
               <td>{item.pricePerSeat}</td>
               <td>
               
-                   <Button variant="contained" type="button" style={{height:'100%'}} className="bg-danger" ><Link to="/bookticket">Book ticket</Link></Button>
+                   <Button variant="contained" type="button" style={{height:'100%'}} className="bg-danger" ><Link to="/booking">Book ticket</Link></Button>
               </td>
             </tr>
           ))}
