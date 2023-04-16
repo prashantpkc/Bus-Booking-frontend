@@ -1,0 +1,12 @@
+.book__main{
+    height: 40%;
+    width:100vh;
+    /* border: 2px solid rgb(60, 57, 57); */
+    margin:0  50vh 0 50vh ;
+    position :absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}

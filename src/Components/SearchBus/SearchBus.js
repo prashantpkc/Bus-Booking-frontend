@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-
 import { BusAtom } from "../../RecoilAtom/Atoms";
 import { useSetRecoilState } from "recoil";
-
 import "./SearchBus.css";
 import { useNavigate } from "react-router-dom";
 import { TextField } from '@mui/material';
@@ -21,8 +19,13 @@ const SearchBus = () => {
       .then((res) => res.json())
       .then((data) => setDataValue(data));
     tonav("/ticket")
-  };
-
+  
+    const token = localStorage.getItem('token');
+    if (!token) {
+      tonav("/login");
+      return;
+    }
+  }
   return (
     <div className="Search">
     

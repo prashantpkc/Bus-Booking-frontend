@@ -3,7 +3,6 @@ import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import Toast from "react-bootstrap/Toast";
 import CustomInput from "../../Atom/Input/CustomInput";
-import CustomButton from "../../Atom/Button/CustomButton";
 import { Button } from "@mui/material";
 
 import {
@@ -17,6 +16,7 @@ import "./Signup.css";
 const Signup = () => {
 
   const [toast, setToast] = useState(false)
+
   const [firstName, setFirstName] = useState("");
   const [firstNameMessage, setFirstNameMessage] = useState("");
 
@@ -37,6 +37,7 @@ const Signup = () => {
 
   const [gender, setGender] = useState("");
   const [dob, setDob] = useState("");
+  
   const navigate = useNavigate();
 
   const HandleSubmit = (e) => {
@@ -75,6 +76,7 @@ const Signup = () => {
 
 
     setToast(true)
+
     let data = {
       firstName,
       lastName,
@@ -202,7 +204,7 @@ const Signup = () => {
         </select>
 
         <CustomInput
-          type="date"
+         type="date"
           value={dob}
           onChange={(e) => setDob(e.target.value)}
           placeholder='Date'

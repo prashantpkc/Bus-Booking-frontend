@@ -7,3 +7,7 @@ export const LoginAtom=atom({
     key:"loginatom",
     default:false
 })
+export const TickeAtom=atom({
+    key:"ticket",
+    default:{}
+})

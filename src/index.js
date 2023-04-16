@@ -12,7 +12,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
-import { BookTicket } from './BookTicket/BookTicket';
+import { Passenger } from './BookTicket/BookTicket';
 import CreateBooking from './pages/BookingPage/BookingPage'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -25,8 +25,9 @@ root.render(
     <Route path='/login' element={<Login/>}/>
     <Route path='/Register' element={<Signup/>}/>
     <Route path="/ticket"  element={<SearchResults/>}/>
-    <Route path="/booking" element={<CreateBooking />} />
-    <Route path="/bookticket" element={<BookTicket />} />
+    {/* <Route path="/booking" element={<CreateBooking />} /> */}
+    <Route path="/booking/:id" element={<CreateBooking />} />
+    <Route path="/passenger/:id" element={<Passenger />} />
     <Route path="/payment" element={<Payment/>}/> 
   </Routes>
  
