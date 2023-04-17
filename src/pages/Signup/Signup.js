@@ -87,7 +87,7 @@ const Signup = () => {
       gender,
     };
     axios
-      .post("http://localhost:5000/createUser", data)
+      .post("https://booking-bus.glitch.me/createUser", data)
       .then(() => {
         navigate("/login");
       })

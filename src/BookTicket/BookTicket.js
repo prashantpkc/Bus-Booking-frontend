@@ -11,7 +11,7 @@ export function Passenger() {
   const [data, setData] = useState('');
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/getBooking/${params.id}`,{
+    axios.get(`https://booking-bus.glitch.me/getBooking/${params.id}`,{
       headers:{
         'token': localStorage.getItem('token')
       }
@@ -33,7 +33,7 @@ export function Passenger() {
     const formData = new FormData(event.target);
     axios({
       method: "post",
-      url: "http://localhost:5000/createPassenger",
+      url: "https://booking-bus.glitch.me/createPassenger",
       data: {
         name: formData.get("name"),
         age: formData.get("age"),
@@ -51,7 +51,7 @@ export function Passenger() {
     )
       .then(() => {
         console.log("Passenger created successfully");
-        tonav("/payment");
+        // tonav("/payment");
       })
       .catch((e) => {
         console.log(e.message);
@@ -112,7 +112,7 @@ export function Passenger() {
           style={{ width: "53%" }}
           className="bg-danger mt-3"
         >
-          Proceed To Pay
+          Save Details
         </Button>
       </form>
     </div>

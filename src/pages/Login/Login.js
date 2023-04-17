@@ -22,7 +22,7 @@ function Login() {
       password: password,
     };
     try {
-      const response = await axios.post("http://localhost:5000/login", data);
+      const response = await axios.post("https://booking-bus.glitch.me/login", data);
       localStorage.setItem("token", response.data.token); // set the token
       setIsLoggedIn(true);
       navigate("/");
