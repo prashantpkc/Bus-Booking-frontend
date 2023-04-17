@@ -12,6 +12,7 @@ const SearchBus = () => {
   const [date, setDate] = useState("");
  
   const setDataValue = useSetRecoilState(BusAtom);
+  
   function handleSearch() {
     fetch(
       `https://booking-bus.glitch.me/getBus?startCity=${origin}&destination=${destination}&availableDates=${date}`

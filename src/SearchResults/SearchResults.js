@@ -6,6 +6,7 @@ import { Button } from "@mui/material"
 import { useSetRecoilState } from "recoil";
 import { LoginAtom } from "../RecoilAtom/Atoms";
 import {useNavigate} from"react-router-dom"
+
 function SearchResults() {
   const tonav=useNavigate()
   const DataValue = useRecoilValue(BusAtom);
