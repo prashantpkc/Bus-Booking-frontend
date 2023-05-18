@@ -5,7 +5,7 @@ import Signup from './pages/Signup/Signup';
 import HomePage from './pages/Homepage/Homepage';
 import Header from './Components/Header/Header';
 import SearchResults from './SearchResults/SearchResults';
-import Payment from "./pages/Payment/Payment"
+
 import {RecoilRoot} from "recoil"
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -28,7 +28,7 @@ root.render(
     {/* <Route path="/booking" element={<CreateBooking />} /> */}
     <Route path="/booking/:id" element={<CreateBooking />} />
     <Route path="/passenger/:id" element={<Passenger />} />
-    <Route path="/payment" element={<Payment/>}/> 
+   
   </Routes>
  
   </BrowserRouter>

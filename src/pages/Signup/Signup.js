@@ -67,14 +67,14 @@ const Signup = () => {
       return;
     }
 
-    e.preventDefault();
+   
     // TODO: send form data to backend
     if (password !== confirmPassword) {
       setConfirmPasswordMessage("Enter Correct Password");
       return;
     }
 
-
+    e.preventDefault();
     setToast(true)
 
     let data = {
